@@ -11,8 +11,9 @@
 		5B24CB352146F24F001B4C4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B24CB342146F24F001B4C4B /* ViewController.swift */; };
 		5B24CB382146F24F001B4C4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B24CB362146F24F001B4C4B /* Main.storyboard */; };
 		5B24CB3B2146F24F001B4C4B /* Knapsak3.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5B24CB392146F24F001B4C4B /* Knapsak3.xcdatamodeld */; };
-		5B24CB3D2146F24F001B4C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B24CB3C2146F24F001B4C4B /* Assets.xcassets */; };
 		5B24CB402146F24F001B4C4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B24CB3E2146F24F001B4C4B /* LaunchScreen.storyboard */; };
+		5B24CB482146F6DB001B4C4B /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B24CB472146F6DB001B4C4B /* ItemCollectionViewCell.swift */; };
+		5B24CB4A2146FB0E001B4C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B24CB492146FB0E001B4C4B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +22,10 @@
 		5B24CB342146F24F001B4C4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5B24CB372146F24F001B4C4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B24CB3A2146F24F001B4C4B /* Knapsak3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Knapsak3.xcdatamodel; sourceTree = "<group>"; };
-		5B24CB3C2146F24F001B4C4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B24CB3F2146F24F001B4C4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B24CB412146F24F001B4C4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B24CB472146F6DB001B4C4B /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		5B24CB492146FB0E001B4C4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,10 +59,11 @@
 			isa = PBXGroup;
 			children = (
 				5B24CB322146F24E001B4C4B /* AppDelegate.swift */,
+				5B24CB472146F6DB001B4C4B /* ItemCollectionViewCell.swift */,
 				5B24CB342146F24F001B4C4B /* ViewController.swift */,
 				5B24CB362146F24F001B4C4B /* Main.storyboard */,
-				5B24CB3C2146F24F001B4C4B /* Assets.xcassets */,
 				5B24CB3E2146F24F001B4C4B /* LaunchScreen.storyboard */,
+				5B24CB492146FB0E001B4C4B /* Assets.xcassets */,
 				5B24CB412146F24F001B4C4B /* Info.plist */,
 				5B24CB392146F24F001B4C4B /* Knapsak3.xcdatamodeld */,
 			);
@@ -126,7 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B24CB402146F24F001B4C4B /* LaunchScreen.storyboard in Resources */,
-				5B24CB3D2146F24F001B4C4B /* Assets.xcassets in Resources */,
+				5B24CB4A2146FB0E001B4C4B /* Assets.xcassets in Resources */,
 				5B24CB382146F24F001B4C4B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B24CB352146F24F001B4C4B /* ViewController.swift in Sources */,
+				5B24CB482146F6DB001B4C4B /* ItemCollectionViewCell.swift in Sources */,
 				5B24CB332146F24E001B4C4B /* AppDelegate.swift in Sources */,
 				5B24CB3B2146F24F001B4C4B /* Knapsak3.xcdatamodeld in Sources */,
 			);
