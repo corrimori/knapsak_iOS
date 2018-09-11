@@ -22,7 +22,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cxT-QD-Loz">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.32230972292723581" green="0.58432083704382987" blue="0.95523184537887573" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ztl-Gd-MjU">
                                     <size key="itemSize" width="375" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -50,9 +50,12 @@
                                                 </label>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="tOO-Pk-4wx">
                                                     <rect key="frame" x="269" y="79" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="stepperValueChanged:" destination="c9y-Zx-8dK" eventType="valueChanged" id="WpK-xV-K8d"/>
+                                                    </connections>
                                                 </stepper>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPg-3X-vCc">
-                                                    <rect key="frame" x="236" y="83" width="25" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPg-3X-vCc">
+                                                    <rect key="frame" x="248.5" y="83" width="12.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -63,40 +66,51 @@
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="tOO-Pk-4wx" secondAttribute="trailing" constant="4" id="IL3-iR-wpB"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="mPg-3X-vCc" secondAttribute="bottom" constant="5" id="oyG-c8-bH0"/>
-                                            <constraint firstItem="tOO-Pk-4wx" firstAttribute="leading" secondItem="mPg-3X-vCc" secondAttribute="trailing" constant="10" id="qxT-6g-uCB"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="tOO-Pk-4wx" secondAttribute="bottom" constant="4" id="shC-EP-BDg"/>
                                             <constraint firstItem="tOO-Pk-4wx" firstAttribute="leading" secondItem="mPg-3X-vCc" secondAttribute="trailing" constant="8" id="wYi-Qv-caq"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="counterLabel" destination="mPg-3X-vCc" id="NWb-kZ-6m7"/>
+                                            <outlet property="counterLabel" destination="mPg-3X-vCc" id="psh-Sh-RFZ"/>
                                             <outlet property="itemImageView" destination="hcA-L1-Ffy" id="Qet-Ki-zqc"/>
                                             <outlet property="itemLabel" destination="Hvv-uT-mlI" id="PLo-Tj-uT5"/>
-                                            <outlet property="stepper" destination="tOO-Pk-4wx" id="Ymj-uh-hPr"/>
+                                            <outlet property="stepper" destination="tOO-Pk-4wx" id="rvQ-wg-ZYd"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnv-Gb-mOb">
-                                <rect key="frame" x="10" y="74" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Knapsak" id="txo-tH-V9b">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="XRL-8x-rjk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="XRL-8x-rjk">
+                            <connections>
+                                <segue destination="RA2-a4-Kdy" kind="show" id="Ddn-Vk-s9O"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="cxT-QD-Loz" id="YCg-TL-BFh"/>
-                        <outlet property="counterLabel" destination="mPg-3X-vCc" id="iaE-WP-APK"/>
-                        <outlet property="stepper" destination="tOO-Pk-4wx" id="yoO-Dy-kCP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="848.79999999999995" y="-564.46776611694156"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="H3m-6r-UNH">
+            <objects>
+                <viewController id="RA2-a4-Kdy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6sl-Gb-fnw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="03N-bU-LZA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZS-e2-EGZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1591" y="-567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gHW-Wn-QuO">

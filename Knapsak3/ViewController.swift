@@ -14,7 +14,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     
     
-    let items = ["boy_undies", "girl_undies", "jacket", "longsleeve", "shorts", "skirt", "socks", "toothbrush", "tshirt"]
+    let items = ["boy undies", "girl undies", "jacket", "longsleeve", "shorts", "skirt", "socks", "toothbrush", "tshirt"]
+    
+    var oneQuantity = 0
     
     let itemImages: [UIImage] = [
         UIImage(named: "boy_undies")!,
@@ -49,9 +51,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         cell.itemLabel.text = items[indexPath.item]
         cell.itemImageView.image = itemImages[indexPath.item]
-        cell.counterLabel = UILabel()
-        
-        cell.stepper = UIStepper()
+//        cell.counterLabel = UILabel()
+//        cell.stepper = UIStepper()
         
         return cell
         
