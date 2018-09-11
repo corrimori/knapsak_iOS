@@ -51,7 +51,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         cell.itemLabel.text = items[indexPath.item]
         cell.itemImageView.image = itemImages[indexPath.item]
-        cell.counterLabel = UILabel()
+//        cell.counterLabel = UILabel()
         print("counter label", cell.counterLabel)
 //        cell.stepper = UIStepper()
         
