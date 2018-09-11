@@ -12,16 +12,16 @@ class ItemCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemLabel: UILabel!
-   
+    var quantity: Int = 0
     
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         counterLabel.text = String(Int(sender.value))
-        print("hello")
-        print("counterLabel text", counterLabel.text)
-        print("value", Int(sender.value))
-//        oneQuantity
+        print("IN CELL --collection view")
+        print("counterLabel text-->", counterLabel.text)
+        quantity = Int(sender.value)
+        print("quantity", quantity)
     }
     
 }
