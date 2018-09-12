@@ -14,6 +14,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // create a property packLists to hold array of PackItem
     var packLists : [PackItem] = []
+    var quantityArray : [Int] = []
+
 //    let items = ["Boy Undies", "Girl Undies", "Tshirt", "Socks", "Shorts", "Toothbrush"]
     
     override func viewDidLoad() {
@@ -67,19 +69,26 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return packLists.count
     }
     
+    
+    // display contents in Item Cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCollectionViewCell
         
+
         // get one object
         let packList = packLists[indexPath.row]
+        // write label and view to ItemCell
+        cell.itemLabel.text = packList.itemName
+        cell.itemImageView.image = UIImage(named: packList.itemImage)
+        
         print(packList.itemName, "<-- packlist")
         print(packList.itemQuantity, "<--quantity")
-        print(packLists[indexPath.item], "<-- indexPath.item")
-        print(packLists[indexPath.row], "<-- indexPath.row")
+//        print(packLists[indexPath.item], "<-- indexPath.item")
+//        print(packLists[indexPath.row], "<-- indexPath.row")
+// testing 1 item first before creating dynamic population
 //        cell.itemLabel.text = "hello"
-        cell.itemLabel.text = packList.itemName
 //        cell.itemImageView.image = UIImage(named: "boy_undiesG")
-        cell.itemImageView.image = UIImage(named: packList.itemImage)
+
 
 //        //cell.counterLabel = UILabel()
 //        cell.quantity = 0
@@ -87,17 +96,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //        print("quantity: ", cell.quantity)
 //        //        cell.stepper = UIStepper()
 //
+        quantityArray.append(packList.itemQuantity)
+        print("item quantity ARRAY----------->", quantityArray)
+        print(packLists, "<<<<<< packLists")
+
 //        cells.append(cell.quantity)
 //        print("cell-->", cell)
 
         return cell
     }
     
-    // *************************************************************
-    
-//    let items = ["boy undies", "girl undies", "jacket", "longsleeve", "shorts", "skirt", "socks", "toothbrush", "tshirt"]
+// *************************************************************
 //
 //    var oneQuantity = "passing data test"
+    
 //    var cells = [Int]()
 ////    var cells = []
 //    
@@ -112,16 +124,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //        UIImage(named: "toothbrush")!,
 //        UIImage(named: "tshirt")!
 ////    ]
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        collectionView.dataSource = self
-//        collectionView.delegate = self
-//    }
 //
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return items.count
-//    }
 //    
 //    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCollectionViewCell
