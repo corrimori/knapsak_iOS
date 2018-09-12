@@ -83,13 +83,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // write label and view to ItemCell
         cell.itemLabel.text = packList.itemName
         cell.itemImageView.image = UIImage(named: packList.itemImage)
+//        cell.itemQuantity.number = packList.itemQuantity
         
-        print(packList.itemName, "<-- packlist")
+        print(packList, "<-- $$$$$$$ packlist")
+        print(packList.itemName, "<-- packlist name")
         print(packList.itemQuantity, "<--quantity")
 //        print(packLists[indexPath.item], "<-- indexPath.item")
 //        print(packLists[indexPath.row], "<-- indexPath.row")
-        print("#########", packLists[3].itemName)
-        packLists[3].itemQuantity = 5
+        print("######### SOCKS", packLists[3].itemName)
+        print("######### SOCKS QUANTITY", packLists[3].itemQuantity)
+        packLists[3].itemQuantity = 0
+        print("item Q", packLists[3].itemQuantity)
         
 // testing 1 item first before creating dynamic population
 //        cell.itemLabel.text = "hello"
@@ -111,31 +115,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
+//        counterLabel.text = String(Int(sender.value))
+//        let tempQuantity = counterLabel.text
+        print("")
         print("called in setup view")
-        print("sender", sender)
+        print("")
+
+//        print("sender", sender)
+//        print("temporary Quantity", itemQuantity)
 //        quantity = Int(sender.value)
 //        print("quantity = ", quantity)
     }
     
 // *************************************************************
 // attempt to write function to pass data from SETUP VIEW to PACKING VIEW
-//
-//    var oneQuantity = "passing data test"
+
 
     // accessing the Packing View Controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let PackingViewController = segue.destination as? PackingViewController {
-//            PackingViewController.text = cell.itemLabel.text
-//            PackingViewController.text = oneQuantity
-            print("array>>>>", quantityArray)
-
-// only able to pass strings through .text
-//            let toString = quantityArray.flatMap { String($0) }
-//            let toString = ["hi", "ho", "yolo"]
-//            let toString = [ "0", "1", "2"]
-//            let quantityArrayToString = toString.joined(separator: " ")
             
-//            PackingViewController.text = quantityArrayToString
+            print("array>>>>", quantityArray)
             
             let arr = [0,1,2]
             PackingViewController.quantities = arr

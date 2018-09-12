@@ -13,20 +13,25 @@ class ItemCollectionViewCell: UICollectionViewCell {
     // IBOutlet - connects storyboard to code
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemLabel: UILabel!
-    var quantity: Int = 0
+    
+//    var self.itemQuantity: Int = 0
+    var Quantity: Int = 0
+
     
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         counterLabel.text = String(Int(sender.value))
         
+        print("===============================")
         print("IN CELL --collection view")
-        print("counterLabel text-->", counterLabel.text)
-        print("counterLabel-->", counterLabel)
-        print("sender-->", sender)
-
-        quantity = Int(sender.value)
-        print("quantity = ", quantity)
-    }
+        print("counterLabel text-->", counterLabel.text!)
+//        print("counterLabel-->", counterLabel)
+//        print("sender-->", sender)
+//        print("self", self.frame)
+        Quantity = Int(sender.value)
+        print(self.itemLabel.text!, " = ", Quantity)
+//        print("itemLabel.text", self.itemLabel.text!)
+     }
     
 }
