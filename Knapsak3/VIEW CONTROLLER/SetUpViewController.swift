@@ -8,15 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+//protocol PackingViewControllerDelegate: class {
+//    func quantityPassed(number: Int?)
+//}
 
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+//    weak var delegate: PackingViewControllerDelegate?
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     // create a property packLists to hold array of PackItem
     var packLists : [PackItem] = []
     var quantityArray : [Int] = []
-
-//    let items = ["Boy Undies", "Girl Undies", "Tshirt", "Socks", "Shorts", "Toothbrush"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +78,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCollectionViewCell
         
-
         // get one object
         let packList = packLists[indexPath.row]
         // write label and view to ItemCell
@@ -85,70 +88,59 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         print(packList.itemQuantity, "<--quantity")
 //        print(packLists[indexPath.item], "<-- indexPath.item")
 //        print(packLists[indexPath.row], "<-- indexPath.row")
+        print("#########", packLists[3].itemName)
+        packLists[3].itemQuantity = 5
+        
 // testing 1 item first before creating dynamic population
 //        cell.itemLabel.text = "hello"
 //        cell.itemImageView.image = UIImage(named: "boy_undiesG")
 
+//        cell.counterLabel = UILabel()
+//        cell.stepper = UIStepper()
+        print("counter label text>>>>>", cell.counterLabel.text)
 
-//        //cell.counterLabel = UILabel()
-//        cell.quantity = 0
-//        //print("counter label", cell.counterLabel)
-//        print("quantity: ", cell.quantity)
-//        //        cell.stepper = UIStepper()
-//
+        // add quantity to an array to store quantities of all items
         quantityArray.append(packList.itemQuantity)
         print("item quantity ARRAY----------->", quantityArray)
-        print(packLists, "<<<<<< packLists")
-
-//        cells.append(cell.quantity)
+//        print(packLists, "<<<<<< packLists")
 //        print("cell-->", cell)
+        
+
 
         return cell
     }
     
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        print("called in setup view")
+        print("sender", sender)
+//        quantity = Int(sender.value)
+//        print("quantity = ", quantity)
+    }
+    
 // *************************************************************
+// attempt to write function to pass data from SETUP VIEW to PACKING VIEW
 //
 //    var oneQuantity = "passing data test"
-    
-//    var cells = [Int]()
-////    var cells = []
-//    
-//    let itemImages: [UIImage] = [
-//        UIImage(named: "boy_undiesG")!,
-//        UIImage(named: "girl_undies")!,
-//        UIImage(named: "jacket")!,
-//        UIImage(named: "longsleeve")!,
-//        UIImage(named: "shorts")!,
-//        UIImage(named: "skirt")!,
-//        UIImage(named: "socks")!,
-//        UIImage(named: "toothbrush")!,
-//        UIImage(named: "tshirt")!
-////    ]
-//
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCollectionViewCell
-//        cell.itemLabel.text = items[indexPath.item]
-//        cell.itemImageView.image = itemImages[indexPath.item]
-//        //cell.counterLabel = UILabel()
-//        cell.quantity = 0
-//        //print("counter label", cell.counterLabel)
-//        print("quantity: ", cell.quantity)
-////        cell.stepper = UIStepper()
-//
-//        cells.append(cell.quantity)
-//        print("cells-->", cells)
-//        return cell
-//        
-//    }
-//    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let PackingViewController = segue.destination as? PackingViewController {
-////            PackingViewController.text = cell.itemLabel.text
-////            PackingViewController.text = oneQuantity
+
+    // accessing the Packing View Controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let PackingViewController = segue.destination as? PackingViewController {
+//            PackingViewController.text = cell.itemLabel.text
 //            PackingViewController.text = oneQuantity
-//        }
-//    }
+            print("array>>>>", quantityArray)
+
+// only able to pass strings through .text
+//            let toString = quantityArray.flatMap { String($0) }
+//            let toString = ["hi", "ho", "yolo"]
+//            let toString = [ "0", "1", "2"]
+//            let quantityArrayToString = toString.joined(separator: " ")
+            
+//            PackingViewController.text = quantityArrayToString
+            
+            let arr = [0,1,2]
+            PackingViewController.quantities = arr
+        }
+    }
 
     // prepare function
     // loop over cells and pull out quantities

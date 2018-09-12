@@ -10,16 +10,18 @@ import UIKit
 
 class PackingViewController: UIViewController {
 
-    @IBOutlet weak var quanityLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
     
-    var text: String? = nil
+//    var text: String? = "no data"
+    var quantities = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("On Packing View Page")
-        quanityLabel.text = text
-        print(quanityLabel.text)
+//        quantityLabel.text = text
+        quantityLabel.text = "reached QL"
+        print("QL----->", quantityLabel)
 
     }
 

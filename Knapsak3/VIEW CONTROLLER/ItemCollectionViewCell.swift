@@ -10,6 +10,7 @@ import UIKit
 
 class ItemCollectionViewCell: UICollectionViewCell {
     
+    // IBOutlet - connects storyboard to code
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var itemLabel: UILabel!
     var quantity: Int = 0
@@ -21,8 +22,11 @@ class ItemCollectionViewCell: UICollectionViewCell {
         
         print("IN CELL --collection view")
         print("counterLabel text-->", counterLabel.text)
+        print("counterLabel-->", counterLabel)
+        print("sender-->", sender)
+
         quantity = Int(sender.value)
-        print("quantity", quantity)
+        print("quantity = ", quantity)
     }
     
 }
