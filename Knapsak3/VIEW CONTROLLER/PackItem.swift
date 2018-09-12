@@ -6,7 +6,11 @@
 //  Copyright © 2018 Corrine Morita. All rights reserved.
 //
 
+import UIKit
+
 class PackItem {
+//    var itemImage: [UIImage] = []
+    
     var itemImage = ""
     var itemName = ""
     var itemQuantity = 0

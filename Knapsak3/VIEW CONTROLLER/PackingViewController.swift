@@ -19,6 +19,7 @@ class PackingViewController: UIViewController {
         
         print("On Packing View Page")
         quanityLabel.text = text
+        print(quanityLabel.text)
 
     }
 
