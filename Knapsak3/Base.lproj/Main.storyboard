@@ -90,7 +90,7 @@
                     <navigationItem key="navigationItem" title="Knapsak" id="txo-tH-V9b">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="XRL-8x-rjk">
                             <connections>
-                                <segue destination="RA2-a4-Kdy" kind="show" id="F7O-Ym-l3p"/>
+                                <segue destination="RA2-a4-Kdy" kind="show" id="ttN-Na-zxD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

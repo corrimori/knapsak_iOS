@@ -26,7 +26,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.viewDidLoad()
         
         packLists = createItemList()
-        print("in create item list")
+        print("create item list --did load")
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -76,24 +76,33 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // display contents in Item Cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCollectionViewCell
         
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCollectionViewCell
+//        print("collection view", collectionView)
+
         // get one object
         let packList = packLists[indexPath.row]
         // write label and view to ItemCell
+        
         cell.itemLabel.text = packList.itemName
         cell.itemImageView.image = UIImage(named: packList.itemImage)
-//        cell.itemQuantity.number = packList.itemQuantity
-        
-        print(packList, "<-- $$$$$$$ packlist")
-        print(packList.itemName, "<-- packlist name")
-        print(packList.itemQuantity, "<--quantity")
+        print("cell+++++", cell)
+//        print("-------", ItemCollectionViewCell)
+//        print(packList, "<-- $$$$$$$ packlist")
+//        print(packList.itemName, "<-- packlist name")
+//        print(packList.itemQuantity, "<--quantity")
 //        print(packLists[indexPath.item], "<-- indexPath.item")
 //        print(packLists[indexPath.row], "<-- indexPath.row")
-        print("######### SOCKS", packLists[3].itemName)
-        print("######### SOCKS QUANTITY", packLists[3].itemQuantity)
-        packLists[3].itemQuantity = 0
-        print("item Q", packLists[3].itemQuantity)
+        print("-----------------------------------")
+        print("")
+        print("######### 1", packLists[1].itemName)
+        print("######### 2", packLists[2].itemName)
+        print("######### 3", packLists[3].itemName)
+        print("######### Q", packLists[3].itemQuantity)
+
+//        print("######### SOCKS QUANTITY", packLists[3].itemQuantity)
+//        packLists[3].itemQuantity = 0
+//        print("item Q", packLists[3].itemQuantity)
         
 // testing 1 item first before creating dynamic population
 //        cell.itemLabel.text = "hello"
@@ -101,11 +110,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
 //        cell.counterLabel = UILabel()
 //        cell.stepper = UIStepper()
-        print("counter label text>>>>>", cell.counterLabel.text)
+//        print("counter label text>>>>>", cell.counterLabel.text)
 
         // add quantity to an array to store quantities of all items
-        quantityArray.append(packList.itemQuantity)
-        print("item quantity ARRAY----------->", quantityArray)
+//        quantityArray.append(packList.itemQuantity)
+//        print("item quantity ARRAY----------->", quantityArray)
 //        print(packLists, "<<<<<< packLists")
 //        print("cell-->", cell)
         
@@ -114,18 +123,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return cell
     }
     
-    @IBAction func stepperValueChanged(_ sender: UIStepper) {
-//        counterLabel.text = String(Int(sender.value))
-//        let tempQuantity = counterLabel.text
-        print("")
-        print("called in setup view")
-        print("")
-
-//        print("sender", sender)
-//        print("temporary Quantity", itemQuantity)
-//        quantity = Int(sender.value)
-//        print("quantity = ", quantity)
-    }
     
 // *************************************************************
 // attempt to write function to pass data from SETUP VIEW to PACKING VIEW

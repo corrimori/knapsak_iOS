@@ -24,14 +24,16 @@ class ItemCollectionViewCell: UICollectionViewCell {
         counterLabel.text = String(Int(sender.value))
         
         print("===============================")
-        print("IN CELL --collection view")
+        print("IN CELL --item collection view CELL")
         print("counterLabel text-->", counterLabel.text!)
 //        print("counterLabel-->", counterLabel)
 //        print("sender-->", sender)
 //        print("self", self.frame)
         Quantity = Int(sender.value)
         print(self.itemLabel.text!, " = ", Quantity)
-//        print("itemLabel.text", self.itemLabel.text!)
+//        print("self.itemLabel.text", self.itemLabel.text!)
+        print("itemLabel", itemLabel.text!)
+        
      }
     
 }
