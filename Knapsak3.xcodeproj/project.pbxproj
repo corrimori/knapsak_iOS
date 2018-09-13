@@ -16,6 +16,8 @@
 		5B24CB4A2146FB0E001B4C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B24CB492146FB0E001B4C4B /* Assets.xcassets */; };
 		5B24CB9121483864001B4C4B /* PackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B24CB9021483864001B4C4B /* PackItem.swift */; };
 		5B24CB9321484344001B4C4B /* PackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B24CB9221484344001B4C4B /* PackingViewController.swift */; };
+		5B44AAD92149FF9500DF3F9B /* PackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAD82149FF9500DF3F9B /* PackCollectionViewCell.swift */; };
+		5B44AADF214AE39800DF3F9B /* tempCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AADE214AE39800DF3F9B /* tempCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		5B24CB492146FB0E001B4C4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B24CB9021483864001B4C4B /* PackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackItem.swift; sourceTree = "<group>"; };
 		5B24CB9221484344001B4C4B /* PackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingViewController.swift; sourceTree = "<group>"; };
+		5B44AAD82149FF9500DF3F9B /* PackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackCollectionViewCell.swift; sourceTree = "<group>"; };
+		5B44AADE214AE39800DF3F9B /* tempCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +80,10 @@
 		5B24CB94214844A5001B4C4B /* VIEW CONTROLLER */ = {
 			isa = PBXGroup;
 			children = (
+				5B44AADE214AE39800DF3F9B /* tempCollectionViewController.swift */,
 				5B24CB9021483864001B4C4B /* PackItem.swift */,
 				5B24CB9221484344001B4C4B /* PackingViewController.swift */,
+				5B44AAD82149FF9500DF3F9B /* PackCollectionViewCell.swift */,
 				5B24CB342146F24F001B4C4B /* SetUpViewController.swift */,
 				5B24CB472146F6DB001B4C4B /* ItemCollectionViewCell.swift */,
 			);
@@ -158,9 +164,11 @@
 				5B24CB9321484344001B4C4B /* PackingViewController.swift in Sources */,
 				5B24CB352146F24F001B4C4B /* SetUpViewController.swift in Sources */,
 				5B24CB482146F6DB001B4C4B /* ItemCollectionViewCell.swift in Sources */,
+				5B44AADF214AE39800DF3F9B /* tempCollectionViewController.swift in Sources */,
 				5B24CB332146F24E001B4C4B /* AppDelegate.swift in Sources */,
 				5B24CB3B2146F24F001B4C4B /* Knapsak3.xcdatamodeld in Sources */,
 				5B24CB9121483864001B4C4B /* PackItem.swift in Sources */,
+				5B44AAD92149FF9500DF3F9B /* PackCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

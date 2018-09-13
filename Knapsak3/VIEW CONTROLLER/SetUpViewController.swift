@@ -20,7 +20,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // create a property packLists to hold array of PackItem
     var packLists : [PackItem] = []
-    var quantityArray : [Int] = []
+//    var quantityArray : [Int] = []
+//++ attempt to store counterLabel quantity values
+//    var cells : [UICollectionViewCell] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         boy_undies.itemQuantity = 0
         
         let girl_undies = PackItem()
-        girl_undies.itemImage = "girl_undiesG"
+        girl_undies.itemImage = "boy_undiesG"
         girl_undies.itemName = "Girl Undies"
         girl_undies.itemQuantity = 0
         
@@ -86,19 +88,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         cell.itemLabel.text = packList.itemName
         cell.itemImageView.image = UIImage(named: packList.itemImage)
-        print("cell+++++", cell)
+        
+        
+// ********************** PRINT TO DEBUG *******************************
 //        print("-------", ItemCollectionViewCell)
 //        print(packList, "<-- $$$$$$$ packlist")
 //        print(packList.itemName, "<-- packlist name")
 //        print(packList.itemQuantity, "<--quantity")
 //        print(packLists[indexPath.item], "<-- indexPath.item")
 //        print(packLists[indexPath.row], "<-- indexPath.row")
-        print("-----------------------------------")
+        print("-----")
         print("")
-        print("######### 1", packLists[1].itemName)
-        print("######### 2", packLists[2].itemName)
-        print("######### 3", packLists[3].itemName)
-        print("######### Q", packLists[3].itemQuantity)
+//        print("######### 1", packLists[1].itemName)
+//        print("######### 2", packLists[2].itemName)
+//        print("######### 3", packLists[3].itemName)
+//        print("######### Q", packLists[3].itemQuantity)
 
 //        print("######### SOCKS QUANTITY", packLists[3].itemQuantity)
 //        packLists[3].itemQuantity = 0
@@ -118,11 +122,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //        print(packLists, "<<<<<< packLists")
 //        print("cell-->", cell)
         
-
+// try to collect the counterLabel quanity values stored in stepper
+//++        cells.append(cell)
+// *************************************************************
 
         return cell
     }
-    
+
     
 // *************************************************************
 // attempt to write function to pass data from SETUP VIEW to PACKING VIEW
@@ -132,10 +138,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let PackingViewController = segue.destination as? PackingViewController {
             
-            print("array>>>>", quantityArray)
+//            for cell in cells {
+//                print("cell: ", cell)
+////                quantityArray.append(cell.quantity)
+//            }
+
+//            print("array>>>>", quantityArray)
             
-            let arr = [0,1,2]
-            PackingViewController.quantities = arr
+            // send value of quantities to PackingViewController
+            PackingViewController.quantities = [3,0,2,2,1,1]
         }
     }
 
