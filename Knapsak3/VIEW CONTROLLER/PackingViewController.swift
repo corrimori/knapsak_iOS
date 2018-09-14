@@ -8,19 +8,19 @@
 
 import UIKit
 
-class PackingViewController: UIViewController, UICollectionViewDelegate {
+class PackingViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var PackCollectionView: UICollectionView!
 
     // create array to display the pack items and array for images
-    let packingItems = ["boy_undies", "girl_undies", "tshirt", "socks", "shorts", "toothbrush"]
+    let packingItem = ["boy_undies", "girl_undies", "tshirt", "socks", "shorts", "toothbrush"]
     
     //define property for array to be passed from SetUpViewController
     var quantities : [Int] = []
 //    var quantities = [Int]()
     var quantityArray : [Int] = []
     
-    let packingImages: [UIImage] = [
+    let packingImage: [UIImage] = [
         UIImage(named: "boy_undiesG")!,
         UIImage(named: "boy_undiesG")!,
         UIImage(named: "tshirt")!,
@@ -33,9 +33,9 @@ class PackingViewController: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         
         // from grid layout ray w video
-        let width = view.frame.size.width/2
-        let layout = PackCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: width)
+//        let width = view.frame.size.width/2
+//        let layout = PackCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//        layout.itemSize = CGSize(width: width, height: width)
         
         print("=========== On Packing View Page ===========")
 
@@ -53,28 +53,27 @@ class PackingViewController: UIViewController, UICollectionViewDelegate {
         */
         
     }
-    
+
+    // MARK: UICollectionViewDataSource
     
     // How many sections are there going to be?
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("packing items count>>>>", packingItems.count)
-        return packingItems.count
+        print("packing items count>>>>", packingItem.count)
+        return packingItem.count
     }
-        
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//            if let label = cell.viewWithTag(100) as UILabel? {
-//        label.text = packingItems[indexPath.row]
-//    }
-//      return cell
-//}
     
+    // display contents in Item Cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PackCell", for: indexPath) as! PackCollectionViewCell
-        cell.packImageLabel.text = packingItems[indexPath.item]
-        print("indexPath>>>", indexPath.item)
-        cell.packImageView.image = packingImages[indexPath.item]
-
+        print("IN PACK VIEW -- ready to render cell")
+        
+        print("IndexPath.item>>", indexPath.item)
+        
+        // Configure the cell
+        cell.packImageLabel.text = packingItem[indexPath.item]
+        cell.packImageView.image = packingImage[indexPath.item]
+        
         return cell
     }
 

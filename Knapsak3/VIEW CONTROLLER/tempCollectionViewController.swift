@@ -11,6 +11,19 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class PackCollectionViewController: UICollectionViewController {
+    
+    @IBOutlet var tempCollectionView: UICollectionView!
+    
+    let itemsToPack = ["Boy Undies", "Girl Undies", "Tshirt", "Socks", "Shorts", "Toothbrush"]
+    
+    let itemImage: [UIImage] = [
+        UIImage(named: "boy_undiesG")!,
+        UIImage(named: "girl_undiesG")!,
+        UIImage(named: "tshirtB")!,
+        UIImage(named: "socksG")!,
+        UIImage(named: "shorts")!,
+        UIImage(named: "toothbrush")!,
+        ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +32,7 @@ class PackCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
@@ -37,21 +50,24 @@ class PackCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 6
+//    }
 
-
+    // How many sections are there going to be?
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return itemsToPack.count
     }
 
+    // display contents in Item Cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tempCell", for: indexPath) as! TempCollectionViewCell
     
         // Configure the cell
+        cell.itemLabel.text = itemsToPack[indexPath.item]
+        cell.itemImage.image = itemImage[indexPath.item]
     
         return cell
     }

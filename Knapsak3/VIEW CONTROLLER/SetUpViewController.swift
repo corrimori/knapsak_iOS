@@ -42,17 +42,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         boy_undies.itemQuantity = 0
         
         let girl_undies = PackItem()
-        girl_undies.itemImage = "boy_undiesG"
+        girl_undies.itemImage = "girl_undiesG"
         girl_undies.itemName = "Girl Undies"
         girl_undies.itemQuantity = 0
         
         let tshirt = PackItem()
-        tshirt.itemImage = "tshirt"
+        tshirt.itemImage = "tshirtB"
         tshirt.itemName = "T-shirt"
         tshirt.itemQuantity = 0
         
         let socks = PackItem()
-        socks.itemImage = "socks"
+        socks.itemImage = "socksG"
         socks.itemName = "Socks"
         socks.itemQuantity = 0
         
@@ -75,7 +75,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return packLists.count
     }
     
-    
     // display contents in Item Cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -84,8 +83,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
         // get one object
         let packList = packLists[indexPath.row]
-        // write label and view to ItemCell
         
+        // write label and view to ItemCell
         cell.itemLabel.text = packList.itemName
         cell.itemImageView.image = UIImage(named: packList.itemImage)
         
