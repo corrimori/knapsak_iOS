@@ -20,6 +20,7 @@
 		5B44AAE6214ED74A00DF3F9B /* KidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAE4214ED74A00DF3F9B /* KidViewController.swift */; };
 		5B44AAE7214ED74A00DF3F9B /* KidViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B44AAE5214ED74A00DF3F9B /* KidViewController.xib */; };
 		5B44AAE9214F68AA00DF3F9B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAE8214F68AA00DF3F9B /* MenuViewController.swift */; };
+		5B44AAEB214F733700DF3F9B /* ImageChecked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAEA214F733700DF3F9B /* ImageChecked.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		5B44AAE4214ED74A00DF3F9B /* KidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidViewController.swift; sourceTree = "<group>"; };
 		5B44AAE5214ED74A00DF3F9B /* KidViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KidViewController.xib; sourceTree = "<group>"; };
 		5B44AAE8214F68AA00DF3F9B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		5B44AAEA214F733700DF3F9B /* ImageChecked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChecked.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				5B24CB322146F24E001B4C4B /* AppDelegate.swift */,
+				5B44AAEA214F733700DF3F9B /* ImageChecked.swift */,
 				5B24CB94214844A5001B4C4B /* VIEW CONTROLLER */,
 				5B24CB362146F24F001B4C4B /* Main.storyboard */,
 				5B24CB3E2146F24F001B4C4B /* LaunchScreen.storyboard */,
@@ -175,6 +178,7 @@
 				5B44AAE9214F68AA00DF3F9B /* MenuViewController.swift in Sources */,
 				5B24CB332146F24E001B4C4B /* AppDelegate.swift in Sources */,
 				5B24CB3B2146F24F001B4C4B /* Knapsak3.xcdatamodeld in Sources */,
+				5B44AAEB214F733700DF3F9B /* ImageChecked.swift in Sources */,
 				5B44AAE6214ED74A00DF3F9B /* KidViewController.swift in Sources */,
 				5B24CB9121483864001B4C4B /* PackItem.swift in Sources */,
 			);

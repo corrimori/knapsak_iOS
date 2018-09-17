@@ -35,10 +35,6 @@ class PackCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
 //        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -49,7 +45,30 @@ class PackCollectionViewController: UICollectionViewController {
         // get quantities value from SetUpViewController
         print("quantities-------->", quantities)
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        itemImage.isUserInteractionEnabled = true
+        itemImage.addGestureRecognizer(tapGestureRecognizer)
+        
     }
+
+    
+    // assign and action for UIImageView
+    
+    //override func viewDidLoad()
+    //{
+    //    super.viewDidLoad()
+    //
+    //    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+    //    imageView.isUserInteractionEnabled = true
+    //    imageView.addGestureRecognizer(tapGestureRecognizer)
+    //}
+    //
+    //func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    //{
+    //    let tappedImage = tapGestureRecognizer.view as! UIImageView
+    //
+    //    // Your action
+    //}
     
 
 
@@ -84,9 +103,7 @@ class PackCollectionViewController: UICollectionViewController {
         cell.itemLabel.text = itemsToPack[indexPath.item]
         cell.itemImage.image = itemImage[indexPath.item]
 
-            
-            
-            
+        
 //        cell.itemImage.isUserInteractionEnabled = true
 //
 //        @objc func tapGesture() {
@@ -102,6 +119,7 @@ class PackCollectionViewController: UICollectionViewController {
 
         return cell
       }
+    
     
     
 
