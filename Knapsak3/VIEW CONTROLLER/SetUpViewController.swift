@@ -8,10 +8,6 @@
 
 import UIKit
 
-//protocol PackingViewControllerDelegate: class {
-//    func quantityPassed(number: Int?)
-//}
-
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
 //    weak var delegate: PackingViewControllerDelegate?
@@ -29,6 +25,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         packLists = createItemList()
         print("create item list --did load")
+        print("++++++++++++++++++")
+        print(packLists)
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -97,7 +95,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //        print(packLists[indexPath.item], "<-- indexPath.item")
 //        print(packLists[indexPath.row], "<-- indexPath.row")
         print("-----")
-        print("")
+        print("display cell")
 //        print("######### 1", packLists[1].itemName)
 //        print("######### 2", packLists[2].itemName)
 //        print("######### 3", packLists[3].itemName)
@@ -135,17 +133,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     // accessing the Packing View Controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let PackingViewController = segue.destination as? PackingViewController {
-            
-//            for cell in cells {
-//                print("cell: ", cell)
-////                quantityArray.append(cell.quantity)
-//            }
-
-//            print("array>>>>", quantityArray)
+        if let PackCollectionViewController = segue.destination as? PackCollectionViewController {
             
             // send value of quantities to PackingViewController
-            PackingViewController.quantities = [3,0,2,2,1,1]
+            PackCollectionViewController.quantities = [3,0,2,2,1,1]
         }
     }
 
@@ -153,4 +144,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     // loop over cells and pull out quantities
     // set a property on to next controller to set the quantities
 }
+
+//extension ViewController: PackingViewControllerDelegate {
+//
+//}
 

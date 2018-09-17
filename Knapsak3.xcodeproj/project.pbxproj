@@ -15,11 +15,11 @@
 		5B24CB482146F6DB001B4C4B /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B24CB472146F6DB001B4C4B /* ItemCollectionViewCell.swift */; };
 		5B24CB4A2146FB0E001B4C4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B24CB492146FB0E001B4C4B /* Assets.xcassets */; };
 		5B24CB9121483864001B4C4B /* PackItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B24CB9021483864001B4C4B /* PackItem.swift */; };
-		5B24CB9321484344001B4C4B /* PackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B24CB9221484344001B4C4B /* PackingViewController.swift */; };
-		5B44AAD92149FF9500DF3F9B /* PackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAD82149FF9500DF3F9B /* PackCollectionViewCell.swift */; };
-		5B44AADF214AE39800DF3F9B /* tempCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AADE214AE39800DF3F9B /* tempCollectionViewController.swift */; };
-		5B44AAE1214B6E6400DF3F9B /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAE0214B6E6400DF3F9B /* TempViewController.swift */; };
-		5B44AAE3214B913700DF3F9B /* TempCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAE2214B913700DF3F9B /* TempCollectionViewCell.swift */; };
+		5B44AADF214AE39800DF3F9B /* PackCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AADE214AE39800DF3F9B /* PackCollectionViewController.swift */; };
+		5B44AAE3214B913700DF3F9B /* PackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAE2214B913700DF3F9B /* PackCollectionViewCell.swift */; };
+		5B44AAE6214ED74A00DF3F9B /* KidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAE4214ED74A00DF3F9B /* KidViewController.swift */; };
+		5B44AAE7214ED74A00DF3F9B /* KidViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B44AAE5214ED74A00DF3F9B /* KidViewController.xib */; };
+		5B44AAE9214F68AA00DF3F9B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAE8214F68AA00DF3F9B /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +33,11 @@
 		5B24CB472146F6DB001B4C4B /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		5B24CB492146FB0E001B4C4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B24CB9021483864001B4C4B /* PackItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackItem.swift; sourceTree = "<group>"; };
-		5B24CB9221484344001B4C4B /* PackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingViewController.swift; sourceTree = "<group>"; };
-		5B44AAD82149FF9500DF3F9B /* PackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackCollectionViewCell.swift; sourceTree = "<group>"; };
-		5B44AADE214AE39800DF3F9B /* tempCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tempCollectionViewController.swift; sourceTree = "<group>"; };
-		5B44AAE0214B6E6400DF3F9B /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
-		5B44AAE2214B913700DF3F9B /* TempCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempCollectionViewCell.swift; sourceTree = "<group>"; };
+		5B44AADE214AE39800DF3F9B /* PackCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackCollectionViewController.swift; sourceTree = "<group>"; };
+		5B44AAE2214B913700DF3F9B /* PackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackCollectionViewCell.swift; sourceTree = "<group>"; };
+		5B44AAE4214ED74A00DF3F9B /* KidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidViewController.swift; sourceTree = "<group>"; };
+		5B44AAE5214ED74A00DF3F9B /* KidViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KidViewController.xib; sourceTree = "<group>"; };
+		5B44AAE8214F68AA00DF3F9B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,6 @@
 				5B24CB322146F24E001B4C4B /* AppDelegate.swift */,
 				5B24CB94214844A5001B4C4B /* VIEW CONTROLLER */,
 				5B24CB362146F24F001B4C4B /* Main.storyboard */,
-				5B44AAE0214B6E6400DF3F9B /* TempViewController.swift */,
 				5B24CB3E2146F24F001B4C4B /* LaunchScreen.storyboard */,
 				5B24CB492146FB0E001B4C4B /* Assets.xcassets */,
 				5B24CB412146F24F001B4C4B /* Info.plist */,
@@ -85,11 +84,12 @@
 		5B24CB94214844A5001B4C4B /* VIEW CONTROLLER */ = {
 			isa = PBXGroup;
 			children = (
-				5B44AADE214AE39800DF3F9B /* tempCollectionViewController.swift */,
-				5B44AAE2214B913700DF3F9B /* TempCollectionViewCell.swift */,
+				5B44AAE8214F68AA00DF3F9B /* MenuViewController.swift */,
+				5B44AAE4214ED74A00DF3F9B /* KidViewController.swift */,
+				5B44AAE5214ED74A00DF3F9B /* KidViewController.xib */,
+				5B44AADE214AE39800DF3F9B /* PackCollectionViewController.swift */,
+				5B44AAE2214B913700DF3F9B /* PackCollectionViewCell.swift */,
 				5B24CB9021483864001B4C4B /* PackItem.swift */,
-				5B24CB9221484344001B4C4B /* PackingViewController.swift */,
-				5B44AAD82149FF9500DF3F9B /* PackCollectionViewCell.swift */,
 				5B24CB342146F24F001B4C4B /* SetUpViewController.swift */,
 				5B24CB472146F6DB001B4C4B /* ItemCollectionViewCell.swift */,
 			);
@@ -156,6 +156,7 @@
 			files = (
 				5B24CB402146F24F001B4C4B /* LaunchScreen.storyboard in Resources */,
 				5B24CB4A2146FB0E001B4C4B /* Assets.xcassets in Resources */,
+				5B44AAE7214ED74A00DF3F9B /* KidViewController.xib in Resources */,
 				5B24CB382146F24F001B4C4B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,16 +168,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B24CB9321484344001B4C4B /* PackingViewController.swift in Sources */,
 				5B24CB352146F24F001B4C4B /* SetUpViewController.swift in Sources */,
-				5B44AAE3214B913700DF3F9B /* TempCollectionViewCell.swift in Sources */,
+				5B44AAE3214B913700DF3F9B /* PackCollectionViewCell.swift in Sources */,
 				5B24CB482146F6DB001B4C4B /* ItemCollectionViewCell.swift in Sources */,
-				5B44AADF214AE39800DF3F9B /* tempCollectionViewController.swift in Sources */,
+				5B44AADF214AE39800DF3F9B /* PackCollectionViewController.swift in Sources */,
+				5B44AAE9214F68AA00DF3F9B /* MenuViewController.swift in Sources */,
 				5B24CB332146F24E001B4C4B /* AppDelegate.swift in Sources */,
-				5B44AAE1214B6E6400DF3F9B /* TempViewController.swift in Sources */,
 				5B24CB3B2146F24F001B4C4B /* Knapsak3.xcdatamodeld in Sources */,
+				5B44AAE6214ED74A00DF3F9B /* KidViewController.swift in Sources */,
 				5B24CB9121483864001B4C4B /* PackItem.swift in Sources */,
-				5B44AAD92149FF9500DF3F9B /* PackCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

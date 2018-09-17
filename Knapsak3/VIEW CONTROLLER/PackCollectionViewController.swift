@@ -12,11 +12,15 @@ private let reuseIdentifier = "Cell"
 
 class PackCollectionViewController: UICollectionViewController {
     
-    @IBOutlet var tempCollectionView: UICollectionView!
+    @IBOutlet var PackCollectionView: UICollectionView!
     
-    let itemsToPack = ["Boy Undies", "Girl Undies", "Tshirt", "Socks", "Shorts", "Toothbrush"]
+    // IBOutlet kidItemImage: UIImageView
+    
+    let itemsToPack = ["Boy Undies", "Boy Undies", "Boy Undies", "Girl Undies", "Tshirt", "Socks", "Shorts", "Toothbrush"]
     
     let itemImage: [UIImage] = [
+        UIImage(named: "boy_undiesG")!,
+        UIImage(named: "boy_undiesG")!,
         UIImage(named: "boy_undiesG")!,
         UIImage(named: "girl_undiesG")!,
         UIImage(named: "tshirtB")!,
@@ -24,9 +28,14 @@ class PackCollectionViewController: UICollectionViewController {
         UIImage(named: "shorts")!,
         UIImage(named: "toothbrush")!,
         ]
+    
+    //define property for array to be passed from SetUpViewController
+    var quantities : [Int] = []
+//    var quantityArray : [Int] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -35,7 +44,13 @@ class PackCollectionViewController: UICollectionViewController {
 //        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        print("=========== On Packing View Page ===========")
+        
+        // get quantities value from SetUpViewController
+        print("quantities-------->", quantities)
+        
     }
+    
 
 
     /*
@@ -63,14 +78,32 @@ class PackCollectionViewController: UICollectionViewController {
 
     // display contents in Item Cell
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tempCell", for: indexPath) as! TempCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "packCell", for: indexPath) as! PackCollectionViewCell
     
         // Configure the cell
         cell.itemLabel.text = itemsToPack[indexPath.item]
         cell.itemImage.image = itemImage[indexPath.item]
-    
+
+            
+            
+            
+//        cell.itemImage.isUserInteractionEnabled = true
+//
+//        @objc func tapGesture() {
+//
+//            if cell.itemImage.image == UIImage(named: "tshirtB")
+//            {
+//                cell.itemImage.image = UIImage(named: "tshirtCK")
+//
+//            } else {
+//                cell.itemImage.image = UIImage(named: "tshirtB")
+//            }
+//        }
+
         return cell
-    }
+      }
+    
+    
 
     // MARK: UICollectionViewDelegate
 
@@ -102,5 +135,48 @@ class PackCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    /* print to PDF
+    class PdfTools {
+        
+        func generatePdfFromCollectionView(_ collectionView: UICollectionView?, filename:String, success:(String) -> ()) {
+            
+            guard let collectionView = collectionView else {
+                return
+            }
+            
+            let pdfData = NSMutableData()
+            
+            let contentArea = CGRect(
+                x: 0,
+                y: 0,
+                width: collectionView.contentSize.width,
+                height: collectionView.contentSize.height
+            )
+            
+            collectionView.frame = contentArea
+            
+            UIGraphicsBeginPDFContextToData(pdfData, contentArea, nil)
+            
+            UIGraphicsBeginPDFPage()
+            collectionView.drawHierarchy(in: collectionView.bounds, afterScreenUpdates: true)
+            UIGraphicsEndPDFContext()
+            
+            if let filepath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first {
+                let fileFullPath = filepath + "/" + filename
+                
+                if pdfData.write(toFile: fileFullPath, atomically: true) {
+                    success(fileFullPath)
+                }
+            }
+        }
+    }
+    
+    //using the PdfTools
+    let pdfTool = PdfTool()
+    pdfTool.generatePdfFromCollectionView(self.collectionView, filename: "myFancy.pdf") { (filename) in
+    // use your pdf here
+    }
+ */
 
 }
