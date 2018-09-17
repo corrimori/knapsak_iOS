@@ -18,8 +18,6 @@ class PackCollectionViewController: UICollectionViewController {
     
     @IBOutlet var PackCollectionView: UICollectionView!
     
-    // IBOutlet kidItemImage: UIImageView
-    
     let itemsToPack = ["Boy Undies", "Boy Undies", "Boy Undies", "Girl Undies", "Tshirt", "Socks", "Shorts", "Toothbrush"]
     
     let itemImage: [UIImage] = [
@@ -32,22 +30,16 @@ class PackCollectionViewController: UICollectionViewController {
         UIImage(named: "shorts")!,
         UIImage(named: "toothbrush")!,
         ]
-    
-    //define property for array to be passed from SetUpViewController
-    var quantities : [Int] = []
-//    var quantityArray : [Int] = []
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Register cell classes
-//        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
         print("=========== On Packing View Page ===========")
         
         // get quantities value from SetUpViewController
-        print("quantities-------->", quantities)
+//        print("quantities-------->", quantities)
         
 //        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 //        itemImage.isUserInteractionEnabled = true

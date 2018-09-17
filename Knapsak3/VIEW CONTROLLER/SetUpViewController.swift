@@ -8,29 +8,24 @@
 
 import UIKit
 
+// animalObject = packItem    AnimalModel = PackItem
+
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    
-//    weak var delegate: PackingViewControllerDelegate?
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    // create a property packLists to hold array of PackItem
-    var packLists : [PackItem] = []
-//    var quantityArray : [Int] = []
-//++ attempt to store counterLabel quantity values
-//    var cells : [UICollectionViewCell] = []
+    // create a property packList to hold array of PackItem
+    var packList : [PackItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        packLists = createItemList()
-        print("create item list --did load")
-        print("++++++++++++++++++")
-        print(packLists)
+        packList = createItemList()
         
         collectionView.dataSource = self
         collectionView.delegate = self
     }
+
     
     func createItemList() -> [PackItem] {
         
@@ -70,34 +65,39 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     // How many sections are there going to be?
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return packLists.count
+        return packList.count
     }
     
     // display contents in Item Cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as! ItemCollectionViewCell
-//        print("collection view", collectionView)
 
         // get one object
-        let packList = packLists[indexPath.row]
+        let packListItem = packList[indexPath.row]
         
         // write label and view to ItemCell
-        cell.itemLabel.text = packList.itemName
-        cell.itemImageView.image = UIImage(named: packList.itemImage)
+        cell.itemLabel.text = packListItem.itemName
+        cell.itemImageView.image = UIImage(named: packListItem.itemImage)
         cell.delegate = self
-        cell.packItem = packList
+        cell.packItem = packListItem
         cell.indexPath = indexPath
         
+
+        
 // ********************** PRINT TO DEBUG *******************************
+        
+        print("----------------------------------------")
+        print("collection view --  cellForItemAt indexPath")
+        print("display cell")
+
+
 //        print("-------", ItemCollectionViewCell)
 //        print(packList, "<-- $$$$$$$ packlist")
 //        print(packList.itemName, "<-- packlist name")
 //        print(packList.itemQuantity, "<--quantity")
 //        print(packLists[indexPath.item], "<-- indexPath.item")
 //        print(packLists[indexPath.row], "<-- indexPath.row")
-        print("-----")
-        print("display cell")
 //        print("######### 1", packLists[1].itemName)
 //        print("######### 2", packLists[2].itemName)
 //        print("######### 3", packLists[3].itemName)
@@ -132,30 +132,43 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 // *************************************************************
 // attempt to write function to pass data from SETUP VIEW to PACKING VIEW
 
-
     // accessing the Packing View Controller
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let PackCollectionViewController = segue.destination as? PackCollectionViewController {
-            
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let PackCollectionViewController = segue.destination as? PackCollectionViewController {
+    
             // send value of quantities to PackingViewController
-            PackCollectionViewController.quantities = [3,0,2,2,1,1]
+//            PackCollectionViewController.quantities = [3,0,2,2,1,1]
+//        }
+//    }
+// *************************************************************
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segToPackCollView" {
+
+            let PackCollectionViewController = segue.destination as! PackCollectionViewController
+            PackCollectionViewController.delegate = self
+
+            if let indexPath = self.ViewController.indexPath(for: sender as! ItemCollectionViewCell) {
+                let animalData = self.allAnimals[indexPath.item]
+                PackCollectionViewController.animal = animalData
+                PackCollectionViewController.indexPath = indexPath
+            }
+            
         }
     }
 
-    // prepare function
-    // loop over cells and pull out quantities
-    // set a property on to next controller to set the quantities
 }
 
-//extension ViewController: PackingViewControllerDelegate {
-//
-//}
 
 extension ViewController: DataDelegate {
     func updatedData(for packItem: PackItem, at indexPath: IndexPath) {
-        print("Called updated Data for packItem: ", packItem)
-        self.packLists[indexPath.item] = packItem;
-        self.collectionView.reloadItems(at: [indexPath]);
+        print("+++++++ PASSING DATA TO CELL +++++++")
+        print("DataDelegate: called updated Data for packItem: ", packItem)
+        self.packList[indexPath.item] = packItem
+//        print("packList[indexPath.item] = ", packList[indexPath.item])
+//        print("packList[indexPath.roe] = ", packList[indexPath.row])
+
+        self.collectionView.reloadItems(at: [indexPath])
     }
 }
 

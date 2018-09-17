@@ -9,7 +9,6 @@
 import UIKit
 
 class PackItem {
-//    var itemImage: [UIImage] = []
     
     var itemImage = ""
     var itemName = ""

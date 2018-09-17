@@ -8,20 +8,7 @@
 
 import UIKit
 
-//protocol PassQuantityDelegate: class {
-////    func quantityPassed(number: Int?)
-//    func quantityPassed(for packObject: PackItem, at: IndexPath)
-//    // pass the itemLabel and quantity (sender.value)
-//}
-
 class ItemCollectionViewCell: UICollectionViewCell {
-    
-    // create a property for the protocol class
-    var delegate: DataDelegate?
-    //var packItem: PackItem
-    var quantity: Int = 0
-    var packItem: PackItem?
-    var indexPath: IndexPath?
     
     // IBOutlet - connects storyboard to code
     @IBOutlet weak var itemImageView: UIImageView!
@@ -29,26 +16,32 @@ class ItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
+    // create a property for the protocol class
+    var delegate: DataDelegate?
+    var packItem: PackItem?
+    var indexPath: IndexPath?
+    
+    var quantity: Int = 0
+    
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         counterLabel.text = String(Int(sender.value))
 
         // get quantity in counterLabel and print for debugging
         print("===============================")
         print("IN CELL --item collection view CELL")
+        print("SENDER.VALUE = ", sender.value)
         print("counterLabel text-->", counterLabel.text!)
         quantity = Int(sender.value)
         print(self.itemLabel.text!, " = ", quantity)
-        print("self.itemLabel.text", self.itemLabel.text!)
-        print("itemLabel = ", itemLabel.text!)
+//        print("self.itemLabel.text", self.itemLabel.text!)
+//        print("itemLabel = ", itemLabel.text!)
         
         if let delegate = self.delegate,
             let packItem = self.packItem,
             let indexPath = self.indexPath {
             delegate.updatedData(for: packItem, at: indexPath)
+            print("delegate.updatedData---->", delegate.updatedData(for: packItem, at: indexPath))
         }
      }
-    
-    // when done
-    // loop through stepper to collect values stored in it and push to array
         
 }
