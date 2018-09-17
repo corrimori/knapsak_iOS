@@ -85,7 +85,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // write label and view to ItemCell
         cell.itemLabel.text = packList.itemName
         cell.itemImageView.image = UIImage(named: packList.itemImage)
-        
+        cell.delegate = self
+        cell.packItem = packList
+        cell.indexPath = indexPath
         
 // ********************** PRINT TO DEBUG *******************************
 //        print("-------", ItemCollectionViewCell)
@@ -148,4 +150,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //extension ViewController: PackingViewControllerDelegate {
 //
 //}
+
+extension ViewController: DataDelegate {
+    func updatedData(for packItem: PackItem, at indexPath: IndexPath) {
+        print("Called updated Data for packItem: ", packItem)
+        self.packLists[indexPath.item] = packItem;
+        self.collectionView.reloadItems(at: [indexPath]);
+    }
+}
 

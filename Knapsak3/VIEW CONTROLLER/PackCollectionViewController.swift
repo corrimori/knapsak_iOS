@@ -10,6 +10,10 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
+protocol DataDelegate {
+    func updatedData(for packItem: PackItem, at: IndexPath)
+}
+
 class PackCollectionViewController: UICollectionViewController {
     
     @IBOutlet var PackCollectionView: UICollectionView!
@@ -45,9 +49,9 @@ class PackCollectionViewController: UICollectionViewController {
         // get quantities value from SetUpViewController
         print("quantities-------->", quantities)
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-        itemImage.isUserInteractionEnabled = true
-        itemImage.addGestureRecognizer(tapGestureRecognizer)
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+//        itemImage.isUserInteractionEnabled = true
+//        itemImage.addGestureRecognizer(tapGestureRecognizer)
         
     }
 

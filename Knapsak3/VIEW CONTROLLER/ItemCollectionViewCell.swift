@@ -8,18 +8,20 @@
 
 import UIKit
 
-protocol PassQuantityDelegate: class {
-//    func quantityPassed(number: Int?)
-    func quantityPassed(for packObject: PackItem, at: IndexPath)
-    // pass the itemLabel and quantity (sender.value)
-}
+//protocol PassQuantityDelegate: class {
+////    func quantityPassed(number: Int?)
+//    func quantityPassed(for packObject: PackItem, at: IndexPath)
+//    // pass the itemLabel and quantity (sender.value)
+//}
 
 class ItemCollectionViewCell: UICollectionViewCell {
     
     // create a property for the protocol class
-    weak var delegate: PassQuantityDelegate?
-    
+    var delegate: DataDelegate?
+    //var packItem: PackItem
     var quantity: Int = 0
+    var packItem: PackItem?
+    var indexPath: IndexPath?
     
     // IBOutlet - connects storyboard to code
     @IBOutlet weak var itemImageView: UIImageView!
@@ -39,6 +41,11 @@ class ItemCollectionViewCell: UICollectionViewCell {
         print("self.itemLabel.text", self.itemLabel.text!)
         print("itemLabel = ", itemLabel.text!)
         
+        if let delegate = self.delegate,
+            let packItem = self.packItem,
+            let indexPath = self.indexPath {
+            delegate.updatedData(for: packItem, at: indexPath)
+        }
      }
     
     // when done
