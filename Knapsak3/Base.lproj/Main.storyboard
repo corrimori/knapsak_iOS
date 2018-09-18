@@ -104,7 +104,6 @@
         <!--Pack it-->
         <scene sceneID="3LJ-aL-jTa">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k9u-xe-oO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="t2n-ua-1e5" customClass="PackCollectionViewController" customModule="Knapsak3" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ILs-z3-RS7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -124,13 +123,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="117" height="147"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Fu-Fp-8Zg">
-                                            <rect key="frame" x="0.0" y="0.0" width="117" height="117"/>
-                                            <accessibility key="accessibilityConfiguration">
-                                                <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
-                                            </accessibility>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQs-gS-eba">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQs-gS-eba">
                                             <rect key="frame" x="0.0" y="118" width="117" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="Qzp-pF-1Fl"/>
@@ -139,19 +132,19 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVU-I3-D7b">
+                                            <rect key="frame" x="0.0" y="0.0" width="117" height="117"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="MQs-gS-eba" firstAttribute="top" secondItem="8Fu-Fp-8Zg" secondAttribute="bottom" constant="1" id="9qi-BT-Tbs"/>
-                                    <constraint firstItem="MQs-gS-eba" firstAttribute="trailing" secondItem="8Fu-Fp-8Zg" secondAttribute="trailing" id="BOP-Fv-99V"/>
-                                    <constraint firstItem="8Fu-Fp-8Zg" firstAttribute="centerX" secondItem="y63-Sv-SZa" secondAttribute="centerX" id="JCU-VW-PZu"/>
                                     <constraint firstAttribute="trailing" secondItem="MQs-gS-eba" secondAttribute="trailing" id="ORn-PY-jiv"/>
-                                    <constraint firstItem="8Fu-Fp-8Zg" firstAttribute="leading" secondItem="MQs-gS-eba" secondAttribute="leading" id="blc-aj-hig"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="MQs-gS-eba" secondAttribute="bottom" constant="1" id="vJT-Nd-PT5"/>
-                                    <constraint firstItem="8Fu-Fp-8Zg" firstAttribute="top" secondItem="y63-Sv-SZa" secondAttribute="top" id="z9c-as-9SB"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="itemImage" destination="8Fu-Fp-8Zg" id="3nt-89-TeR"/>
+                                    <outlet property="itemButton" destination="OVU-I3-D7b" id="bzT-sB-YrR"/>
                                     <outlet property="itemLabel" destination="MQs-gS-eba" id="paX-pb-su0"/>
                                 </connections>
                             </collectionViewCell>
@@ -170,8 +163,9 @@
                         <outlet property="PackCollectionView" destination="ILs-z3-RS7" id="wLE-Hg-dmF"/>
                     </connections>
                 </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k9u-xe-oO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2534" y="-565"/>
+            <point key="canvasLocation" x="2533.5999999999999" y="-565.36731634182911"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gHW-Wn-QuO">

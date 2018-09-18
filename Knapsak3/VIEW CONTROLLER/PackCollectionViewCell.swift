@@ -9,9 +9,9 @@
 import UIKit
 
 class PackCollectionViewCell: UICollectionViewCell {
-   
-    @IBOutlet weak var itemImage: UIImageView!
-    @IBOutlet weak var itemLabel: UILabel!
     
+    // IBOutlet - connects storyboard to code
+    @IBOutlet weak var itemButton: UIButton!
+    @IBOutlet weak var itemLabel: UILabel!
     
 }

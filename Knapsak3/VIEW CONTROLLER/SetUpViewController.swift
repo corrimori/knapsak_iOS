@@ -30,22 +30,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func createItemList() -> [PackItem] {
         
         let boy_undies = PackItem()
-        boy_undies.itemImage = "boy_undiesG"
+        boy_undies.itemImage = "boy_undies"
         boy_undies.itemName = "Boy Undies"
         boy_undies.itemQuantity = 0
         
         let girl_undies = PackItem()
-        girl_undies.itemImage = "girl_undiesG"
+        girl_undies.itemImage = "girl_undies"
         girl_undies.itemName = "Girl Undies"
         girl_undies.itemQuantity = 0
         
         let tshirt = PackItem()
-        tshirt.itemImage = "tshirtB"
+        tshirt.itemImage = "tshirt"
         tshirt.itemName = "T-shirt"
         tshirt.itemQuantity = 0
         
         let socks = PackItem()
-        socks.itemImage = "socksG"
+        socks.itemImage = "socks"
         socks.itemName = "Socks"
         socks.itemQuantity = 0
         

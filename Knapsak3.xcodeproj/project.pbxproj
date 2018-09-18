@@ -19,6 +19,7 @@
 		5B44AAE3214B913700DF3F9B /* PackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAE2214B913700DF3F9B /* PackCollectionViewCell.swift */; };
 		5B44AAE9214F68AA00DF3F9B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAE8214F68AA00DF3F9B /* MenuViewController.swift */; };
 		5B44AAEB214F733700DF3F9B /* ImageChecked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAEA214F733700DF3F9B /* ImageChecked.swift */; };
+		5B44AAED2150A07600DF3F9B /* toPDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B44AAEC2150A07600DF3F9B /* toPDF.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5B44AAE2214B913700DF3F9B /* PackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackCollectionViewCell.swift; sourceTree = "<group>"; };
 		5B44AAE8214F68AA00DF3F9B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5B44AAEA214F733700DF3F9B /* ImageChecked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageChecked.swift; sourceTree = "<group>"; };
+		5B44AAEC2150A07600DF3F9B /* toPDF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = toPDF.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				5B24CB9021483864001B4C4B /* PackItem.swift */,
 				5B24CB342146F24F001B4C4B /* SetUpViewController.swift */,
 				5B24CB472146F6DB001B4C4B /* ItemCollectionViewCell.swift */,
+				5B44AAEC2150A07600DF3F9B /* toPDF.swift */,
 			);
 			path = "VIEW CONTROLLER";
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				5B24CB3B2146F24F001B4C4B /* Knapsak3.xcdatamodeld in Sources */,
 				5B44AAEB214F733700DF3F9B /* ImageChecked.swift in Sources */,
 				5B24CB9121483864001B4C4B /* PackItem.swift in Sources */,
+				5B44AAED2150A07600DF3F9B /* toPDF.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
