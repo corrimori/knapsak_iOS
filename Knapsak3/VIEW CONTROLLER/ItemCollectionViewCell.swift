@@ -21,27 +21,23 @@ class ItemCollectionViewCell: UICollectionViewCell {
     var packItem: PackItem?
     var indexPath: IndexPath?
     
-    var quantity: Int = 0
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         counterLabel.text = String(Int(sender.value))
-
+        packItem?.itemQuantity = Int(sender.value)
+        
         // get quantity in counterLabel and print for debugging
         print("===============================")
         print("IN CELL --item collection view CELL")
-        print("SENDER.VALUE = ", sender.value)
         print("counterLabel text-->", counterLabel.text!)
-        quantity = Int(sender.value)
-        print(self.itemLabel.text!, " = ", quantity)
-//        print("self.itemLabel.text", self.itemLabel.text!)
-//        print("itemLabel = ", itemLabel.text!)
+        print("packItem quantity--> ", packItem?.itemQuantity)
         
         if let delegate = self.delegate,
             let packItem = self.packItem,
             let indexPath = self.indexPath {
             delegate.updatedData(for: packItem, at: indexPath)
-            print("delegate.updatedData---->", delegate.updatedData(for: packItem, at: indexPath))
         }
-     }
         
+     }
+    
 }

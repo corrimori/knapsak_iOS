@@ -16,31 +16,25 @@ protocol DataDelegate {
 
 class PackCollectionViewController: UICollectionViewController {
     
+//    weak var delegate: DataDelegate?
+    
     @IBOutlet var PackCollectionView: UICollectionView!
-    
-    let itemsToPack = ["Boy Undies", "Boy Undies", "Boy Undies", "Girl Undies", "Tshirt", "Socks", "Shorts", "Toothbrush"]
-    
-    let itemImage: [UIImage] = [
-        UIImage(named: "boy_undiesG")!,
-        UIImage(named: "boy_undiesG")!,
-        UIImage(named: "boy_undiesG")!,
-        UIImage(named: "girl_undiesG")!,
-        UIImage(named: "tshirtB")!,
-        UIImage(named: "socksG")!,
-        UIImage(named: "shorts")!,
-        UIImage(named: "toothbrush")!,
-        ]
-
+    var packList : [PackItem] = []
+    var expandedPackList : [PackItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        print("=========== On Packing View Page ===========")
+        for item in packList {
+            let quantity = item.itemQuantity
+            if quantity > 0 {
+                for _ in 1...quantity {
+                    expandedPackList.append(item)
+                }
+            }
+        }
         
-        // get quantities value from SetUpViewController
-//        print("quantities-------->", quantities)
-        
+        print("Expanded pack list ", expandedPackList.count)
 //        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
 //        itemImage.isUserInteractionEnabled = true
 //        itemImage.addGestureRecognizer(tapGestureRecognizer)
@@ -88,7 +82,8 @@ class PackCollectionViewController: UICollectionViewController {
     // How many sections are there going to be?
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return itemsToPack.count
+        // loop over packList and accumulate each quantity
+        return expandedPackList.count
     }
 
     // display contents in Item Cell
@@ -96,8 +91,8 @@ class PackCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "packCell", for: indexPath) as! PackCollectionViewCell
     
         // Configure the cell
-        cell.itemLabel.text = itemsToPack[indexPath.item]
-        cell.itemImage.image = itemImage[indexPath.item]
+        cell.itemLabel.text = expandedPackList[indexPath.item].itemName
+        cell.itemImage.image = UIImage(named: expandedPackList[indexPath.item].itemImage)
 
         
 //        cell.itemImage.isUserInteractionEnabled = true

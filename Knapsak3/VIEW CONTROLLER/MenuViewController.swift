@@ -11,15 +11,13 @@ import UIKit
 class MenuViewController: UIViewController {
     
     @IBOutlet weak var createKnapsakButton: UIButton!
-    @IBOutlet weak var savedKnapsaksButton: UIButton!
-    
+    @IBOutlet weak var savedKnapsaksButton: UIButton!  
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-       createKnapsakButton.layer.cornerRadius = createKnapsakButton.frame.height/2
-       savedKnapsaksButton.layer.cornerRadius = savedKnapsaksButton.frame.height/2
+        createKnapsakButton.layer.cornerRadius = createKnapsakButton.frame.height/2
+        savedKnapsaksButton.layer.cornerRadius = savedKnapsaksButton.frame.height/2
     }
 
 }
