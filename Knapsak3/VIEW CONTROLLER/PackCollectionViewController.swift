@@ -24,25 +24,19 @@ class PackCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // ***** expand the array so it can render multiple items of each item
+        // expand the array so it can render multiple items of each item
         for item in packList {
             let quantity = item.itemQuantity
             if quantity > 0 {
                 for _ in 1...quantity {
                     expandedPackList.append(item)
-                    print("here>>>>", item.itemName)
-                    print(expandedPackList[0].itemName, "<<<<<<<")
                 }
             }
             
         } // *****
-        
-        
-        print("expandedPackList", expandedPackList)
-        
-        print("---------- In Pack Collection VC -----------")
-        print("Expanded pack list ", expandedPackList.count)
-        print("Expanded pack list ", expandedPackList[0].itemName)
+//        
+//        print("---------- In Pack Collection VC -----------")
+//        print("Expanded pack list ", expandedPackList[0].itemName)
         
     }
     
@@ -62,7 +56,7 @@ class PackCollectionViewController: UICollectionViewController {
         
         // Configure the cell
         cell.itemLabel.text = expandedPackList[indexPath.item].itemName
-        cell.itemButton.setImage(UIImage(named :expandedPackList[indexPath.item].itemImage), for: UIControlState.normal)
+        cell.itemButton.setImage(UIImage(named : expandedPackList[indexPath.item].itemImage), for: UIControlState.normal)
         cell.itemButton.setImage(UIImage(named : expandedPackList[indexPath.item].itemImage + "CK"), for: UIControlState.selected)
         cell.itemButton.addTarget(self, action: #selector(itemButtonTapped), for: UIControlEvents.touchUpInside)
         

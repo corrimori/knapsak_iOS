@@ -16,6 +16,10 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = nil
+//        navigationController?.navigationBar.barTintColor = UIColor.orange
+
+
         createKnapsakButton.layer.cornerRadius = createKnapsakButton.frame.height/2
         savedKnapsaksButton.layer.cornerRadius = savedKnapsaksButton.frame.height/2
     }

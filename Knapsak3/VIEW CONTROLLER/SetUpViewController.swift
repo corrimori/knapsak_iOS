@@ -99,6 +99,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
 extension ViewController: DataDelegate {
     func updatedData(for packItem: PackItem, at indexPath: IndexPath) {
+        print("  ")
         print("+++++++ PASSING DATA TO CELL +++++++")
         print("DataDelegate: called updated Data for packItem: ", packItem)
         print("New quantity in delegate : ", packItem.itemQuantity)

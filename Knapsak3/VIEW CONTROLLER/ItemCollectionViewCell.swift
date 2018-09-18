@@ -30,7 +30,6 @@ class ItemCollectionViewCell: UICollectionViewCell {
         print("===============================")
         print("IN CELL --item collection view CELL")
         print("counterLabel text-->", counterLabel.text!)
-        print("packItem quantity--> ", packItem?.itemQuantity)
         
         if let delegate = self.delegate,
             let packItem = self.packItem,
