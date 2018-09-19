@@ -32,11 +32,10 @@ class PackCollectionViewController: UICollectionViewController {
                     expandedPackList.append(item)
                 }
             }
-            
-        } // *****
-//        
-//        print("---------- In Pack Collection VC -----------")
-//        print("Expanded pack list ", expandedPackList[0].itemName)
+        }
+        
+        print("---------- In Pack Collection VC -----------")
+        print("Expanded pack list ", expandedPackList[0].itemName)
         
     }
     
@@ -52,7 +51,7 @@ class PackCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "packCell", for: indexPath) as! PackCollectionViewCell
         
-//        let packItem = expandedPackList[indexPath.item]
+        // let packItem = expandedPackList[indexPath.item]
         
         // Configure the cell
         cell.itemLabel.text = expandedPackList[indexPath.item].itemName
