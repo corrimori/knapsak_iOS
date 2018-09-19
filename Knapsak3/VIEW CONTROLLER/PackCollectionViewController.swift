@@ -71,6 +71,69 @@ class PackCollectionViewController: UICollectionViewController {
             itemButton.isSelected = true
         }
     }
-
+    
+//    // ******************  start printing
+//    weak var printButtonTapped: UIBarButtonItem! {
+//        self.printView()
+//    }
+//
+//    func printView() {
+//        let printController = UIPrintInteractionController.shared
+//
+//        let printInfo = UIPrintInfo(dictionary: nil)
+//        printInfo.jobname = "printing"
+//        printInfo.outputType = .general //what printing
+//
+//        printController.printInfo = printInfo
+//
+//        printController.printingItem = imageView.image // image going to print
+//
+//        printController.present(animated: true) { (_, isPrinted, error) in
+//            if error == nil {
+//                if isPrinted {
+//                    print("printing success")
+//                } else {
+//                    print("printing unsucessful")
+//                }
+//            }
+//
+//            completionHandler;: UIPrintInteractionCompletionHandler?)
+//    }
+//
+//        public func printInteractionController(_ printInteractionController: UIPrintInteractionController, choosePaper paperList: [UIPrintPaper]) -> UIPrintPaper
+//
+//
+//        func printButton(sender: AnyObject) {
+//
+//            let printInfo = UIPrintInfo(dictionary:nil)
+//            printInfo.outputType = UIPrintInfoOutputType.general
+//            printInfo.jobName = "Test Print"
+//
+//            // Set up print controller
+//            let printController = UIPrintInteractionController.shared
+//            printController.printInfo = printInfo
+//
+//            // Assign a UIImage version of my UIView as a printing iten
+//            printController.printingItem = self.view.toImage()
+//
+//            // Assign a Specific Image to printing item
+//            //printController.printingItem = customImageView.image
+//
+//            // Print With Dialogue Box
+//            //printController.present(from: self.view.frame, in: self.view, animated: true, completionHandler: nil)
+//
+//
+//            // Print Without Dialogue Box
+//            printController.print(to: defaultPrinter, completionHandler: {(controller, success, error) -> Void in
+//                if success {
+//                    debugPrint("Printing Completed.")
+//                } else {
+//                    debugPrint("Printing Failed.")
+//                }
+//            })
+//        }
+//    
+//        
+//    }
     
 }

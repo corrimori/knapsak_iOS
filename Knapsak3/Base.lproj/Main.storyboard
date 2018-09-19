@@ -150,7 +150,7 @@
                     </collectionView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Pack it" id="pCB-IG-luc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="aJV-k6-Vay"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="aJV-k6-Vay"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
