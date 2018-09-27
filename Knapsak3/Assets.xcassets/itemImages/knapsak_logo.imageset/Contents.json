@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "boy_undiesG.jpg",
+      "filename" : "knapsak_logo.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "knapsak_logo-1.png",
       "scale" : "2x"
     },
     {

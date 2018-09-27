@@ -22,7 +22,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cxT-QD-Loz">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.32230972292723581" green="0.58432083704382987" blue="0.95523184537887573" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ztl-Gd-MjU">
                                     <size key="itemSize" width="375" height="120"/>
                                     <size key="headerReferenceSize" width="0.0" height="8"/>
@@ -41,17 +41,17 @@
                                                     <rect key="frame" x="5" y="0.0" width="115" height="120"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvv-uT-mlI">
-                                                    <rect key="frame" x="135" y="20" width="228" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvv-uT-mlI">
+                                                    <rect key="frame" x="135" y="16" width="228" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="tOO-Pk-4wx">
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="20" translatesAutoresizingMaskIntoConstraints="NO" id="tOO-Pk-4wx">
                                                     <rect key="frame" x="269" y="79" width="94" height="29"/>
                                                     <connections>
-                                                        <action selector="stepperValueChanged:" destination="c9y-Zx-8dK" eventType="valueChanged" id="WpK-xV-K8d"/>
+                                                        <action selector="stepperValueChanged:" destination="c9y-Zx-8dK" eventType="valueChanged" id="nNW-TD-U0d"/>
                                                     </connections>
                                                 </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPg-3X-vCc">
@@ -77,7 +77,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6Jh-J1-oTB">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="itemCell" id="6Jh-J1-oTB">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="8"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
@@ -89,7 +89,7 @@
                     <navigationItem key="navigationItem" title="Knapsak" id="txo-tH-V9b">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="XRL-8x-rjk">
                             <connections>
-                                <segue destination="RA2-a4-Kdy" kind="show" id="Ddn-Vk-s9O"/>
+                                <segue destination="t2n-ua-1e5" kind="show" identifier="segToPackCollView" id="wGr-XM-yMT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -99,45 +99,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="848.79999999999995" y="-564.46776611694156"/>
+            <point key="canvasLocation" x="1749.5999999999999" y="-565.36731634182911"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="H3m-6r-UNH">
+        <!--Pack it-->
+        <scene sceneID="3LJ-aL-jTa">
             <objects>
-                <viewController id="RA2-a4-Kdy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6sl-Gb-fnw">
+                <collectionViewController id="t2n-ua-1e5" customClass="PackCollectionViewController" customModule="Knapsak3" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ILs-z3-RS7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SRi-dr-gGl">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2OX-eS-nlm">
-                                    <size key="itemSize" width="136" height="136"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="goY-3t-JBS">
-                                        <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="03N-bU-LZA"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rZS-e2-EGZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fuR-Xt-y91">
+                            <size key="itemSize" width="117" height="138"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="packCell" id="y63-Sv-SZa" customClass="PackCollectionViewCell" customModule="Knapsak3" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="117" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="117" height="138"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OVU-I3-D7b">
+                                            <rect key="frame" x="0.0" y="0.0" width="117" height="117"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzs-3N-jgw">
+                                            <rect key="frame" x="0.0" y="114" width="117" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <outlet property="itemButton" destination="OVU-I3-D7b" id="bzT-sB-YrR"/>
+                                    <outlet property="itemLabel" destination="Wzs-3N-jgw" id="APz-8b-AyO"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="t2n-ua-1e5" id="orp-13-qZe"/>
+                            <outlet property="delegate" destination="t2n-ua-1e5" id="W2v-Aj-Z86"/>
+                        </connections>
+                    </collectionView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Pack it" id="pCB-IG-luc">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="aJV-k6-Vay"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="PackCollectionView" destination="ILs-z3-RS7" id="wLE-Hg-dmF"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k9u-xe-oO5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1589.5999999999999" y="-567.16641679160421"/>
+            <point key="canvasLocation" x="2533.5999999999999" y="-565.36731634182911"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gHW-Wn-QuO">
@@ -150,12 +172,76 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nsh-fH-8cb"/>
+                        <segue destination="hpg-Vv-Hau" kind="relationship" relationship="rootViewController" id="mxh-sc-2Ax"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKz-yE-jbZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="112.8" y="-564.46776611694156"/>
+            <point key="canvasLocation" x="138" y="-565"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="tVL-5Y-l9o">
+            <objects>
+                <viewController id="hpg-Vv-Hau" customClass="MenuViewController" customModule="Knapsak3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="790-NH-rTB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbp-n8-8qL">
+                                <rect key="frame" x="100" y="384" width="175" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6pU-v0-LGW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <state key="normal" title="Create Knapsak">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="FQK-Vz-gdf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hzj-Nu-9ly">
+                                <rect key="frame" x="100" y="453" width="175" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                <state key="normal" title="Saved Knapsaks">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="knapsak_blue" translatesAutoresizingMaskIntoConstraints="NO" id="5qd-Ws-JDf">
+                                <rect key="frame" x="103" y="146" width="193" height="202"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.76470588235294112" blue="0.24313725490196078" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Vbp-n8-8qL" secondAttribute="bottom" constant="233" id="3NS-Yo-erW"/>
+                            <constraint firstItem="hzj-Nu-9ly" firstAttribute="trailing" secondItem="Vbp-n8-8qL" secondAttribute="trailing" id="K2P-bP-S4G"/>
+                            <constraint firstItem="5qd-Ws-JDf" firstAttribute="leading" secondItem="jUE-Ap-lT6" secondAttribute="leading" constant="103" id="QNC-t3-IYQ"/>
+                            <constraint firstItem="hzj-Nu-9ly" firstAttribute="top" secondItem="Vbp-n8-8qL" secondAttribute="bottom" constant="19" id="dqv-j7-luX"/>
+                            <constraint firstItem="jUE-Ap-lT6" firstAttribute="bottom" secondItem="hzj-Nu-9ly" secondAttribute="bottom" constant="164" id="e1u-8c-Uug"/>
+                            <constraint firstItem="jUE-Ap-lT6" firstAttribute="trailing" secondItem="Vbp-n8-8qL" secondAttribute="trailing" constant="100" id="ffP-3C-yIF"/>
+                            <constraint firstItem="jUE-Ap-lT6" firstAttribute="trailing" secondItem="5qd-Ws-JDf" secondAttribute="trailing" constant="79" id="jmo-2Q-hVk"/>
+                            <constraint firstItem="5qd-Ws-JDf" firstAttribute="top" secondItem="jUE-Ap-lT6" secondAttribute="top" constant="82" id="oYd-ve-Tra"/>
+                            <constraint firstItem="Vbp-n8-8qL" firstAttribute="top" secondItem="5qd-Ws-JDf" secondAttribute="bottom" constant="36" id="odb-lu-LW2"/>
+                            <constraint firstItem="hzj-Nu-9ly" firstAttribute="leading" secondItem="Vbp-n8-8qL" secondAttribute="leading" id="p1A-vs-QWX"/>
+                            <constraint firstItem="Vbp-n8-8qL" firstAttribute="leading" secondItem="jUE-Ap-lT6" secondAttribute="leading" constant="100" id="pQT-2y-xtK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jUE-Ap-lT6"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1S6-Uz-Ok3"/>
+                    <connections>
+                        <outlet property="SavedKnapsaksButton" destination="hzj-Nu-9ly" id="dTt-xW-SO3"/>
+                        <outlet property="createKnapsakButton" destination="Vbp-n8-8qL" id="Vdt-Ps-CMv"/>
+                        <outlet property="savedKnapsaksButton" destination="hzj-Nu-9ly" id="5Cw-uy-sSF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Icj-le-DNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953" y="-565"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="knapsak_blue" width="144" height="144"/>
+    </resources>
 </document>
