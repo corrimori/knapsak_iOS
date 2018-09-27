@@ -44,6 +44,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         tshirt.itemName = "T-shirt"
         tshirt.itemQuantity = 0
         
+        let longsleeve = PackItem()
+        longsleeve.itemImage = "longsleeve"
+        longsleeve.itemName = "Longsleeve"
+        longsleeve.itemQuantity = 0
+        
         let socks = PackItem()
         socks.itemImage = "socks"
         socks.itemName = "Socks"
@@ -54,12 +59,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         shorts.itemName = "Shorts"
         shorts.itemQuantity = 0
         
+        let pants = PackItem()
+        pants.itemImage = "pants"
+        pants.itemName = "Pants"
+        pants.itemQuantity = 0
+        
+        let jacket = PackItem()
+        jacket.itemImage = "jacket"
+        jacket.itemName = "Jacket"
+        jacket.itemQuantity = 0
+        
         let toothbrush = PackItem()
         toothbrush.itemImage = "toothbrush"
-        toothbrush.itemName = "Toothbrush & Toothpaste"
+        toothbrush.itemName = "Toothbrush"
         toothbrush.itemQuantity = 0
         
-        return [boy_undies, girl_undies, tshirt, socks, shorts, toothbrush]
+        return [boy_undies, girl_undies, tshirt, longsleeve, socks, shorts, pants, jacket, toothbrush]
     }
 
     
