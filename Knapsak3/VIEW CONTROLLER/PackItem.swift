@@ -8,9 +8,9 @@
 
 import UIKit
 
-class PackItem {
-    
-    var itemImage = ""
-    var itemName = ""
-    var itemQuantity = 0
-}
+//class PackItem {
+//    
+//    var itemImage = ""
+//    var itemName = ""
+//    var itemQuantity = 0
+//}
