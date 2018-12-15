@@ -13,7 +13,7 @@ Pack up and let's go!
 ## Images
 
 <div align="center">
-  <img src="Knapsak3/knapsak_scnshots.png" width="400"/>
+  <img src="Knapsak3/knapsak_scnshots.png" width="550"/>
 </div>
 
 ## Authors
